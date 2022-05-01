@@ -1,0 +1,65 @@
+.vars:
+
+operation 1 1
+num1 1 1
+num2 1 1
+pointer 1 1
+.inst:
+mov r0 a
+int 2
+mov r0 3e
+int 2
+int 3
+pop r0
+mov r1 30
+sub r0 r0 r1
+mov operation r0
+mov r0 3e
+int 2
+int 3
+pop r0
+sub r0 r0 r1
+mov num1 r0
+mov r0 3e
+int 2
+int 3
+pop r0
+sub r0 r0 r1
+mov num2 r0
+
+cmp 0 operation
+jmp eq 28
+
+cmp 1 operation
+jmp eq 2E
+
+cmp 2 operation
+jmp eq 34
+
+cmp 3 operation
+jmp eq 3A
+
+mov r0 num1
+mov r1 num2
+add r0 r0 r1
+int 0
+mov r8 6
+
+mov r0 num1
+mov r1 num2
+sub r0 r0 r1
+int 0
+mov r8 6
+
+mov r0 num1
+mov r1 num2
+mul r0 r0 r1
+int 0
+mov r8 6
+
+mov r0 num1
+mov r1 num2
+div r0 r0 r1
+int 0
+mov r8 6
+int 1
